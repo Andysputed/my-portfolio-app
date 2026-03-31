@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Poppins:wght@400;600&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  /* Enigma Theme Colors */
+  --color-darkBg: #111215;
+  --color-brandBlue: #0060FF;
+  --color-textMuted: #B4B4B4;
+  --color-textDark: #54595F;
+  
+  /* Enigma Theme Fonts */
+  --font-sans: "Poppins", sans-serif;
+  --font-display: "Syne", sans-serif;
+}
+
+/* Base styles to ensure the dark theme is applied everywhere */
+body {
+  background-color: var(--color-darkBg);
+  color: #FFFFFF;
+}
+
+/* Custom utility for modern outlined text */
+.text-stroke {
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  color: transparent;
+}
+/* Custom utilities for 3D rotations */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+
+/* THE SECRET SAUCE: The Metallic Gradient Text */
+.text-metallic {
+  /* Creates a gradient from pure white to the theme's dark gray */
+  background: linear-gradient(to bottom, #ffffff 0%, #a7afbd 55%, #54595f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  
+  /* Adds that heavy, cinematic shadow behind the text */
+  filter: drop-shadow(0px 20px 20px rgba(0,0,0,0.8));
+}
