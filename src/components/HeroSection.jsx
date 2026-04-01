@@ -58,6 +58,7 @@ const Hero = () => {
               <img 
                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop" 
                 alt="Portrait" 
+                fetchPriority='high'
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />
             </div>

@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   const socials = [
-    { icon: <FaGithub size={20} />, link: "#" },
+    { icon: <FaGithub size={20} />, link: "https://github.com/Andysputed" },
     { icon: <FaLinkedin size={20} />, link: "#" },
     { icon: <FaTwitter size={20} />, link: "#" },
   ];
