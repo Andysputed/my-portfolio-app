@@ -29,7 +29,7 @@ const About = () => {
           <div className="w-full max-w-[350px] aspect-[4/5] rounded-[200px] border border-brandBlue/30 bg-[#1a1c23] p-2 relative shadow-[0_0_50px_rgba(0,96,255,0.1)]">
             <div className="w-full h-full rounded-[200px] overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=60&w=600&auto=format&fit=crop" 
                 alt="About Me" 
                 fetchPriority='high'
                 className="w-full h-full object-cover opacity-90"

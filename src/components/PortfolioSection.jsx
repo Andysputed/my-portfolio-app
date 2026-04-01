@@ -90,6 +90,7 @@ const PortfolioSection = () => {
                           rel="noopener noreferrer"
                           className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-darkBg transition-colors duration-300"
                           title="View Source Code"
+                          aria-label="View Source Code"
                         >
                           <FaGithub className="text-lg sm:text-xl" />
                         </a>
@@ -102,6 +103,7 @@ const PortfolioSection = () => {
                           rel="noopener noreferrer"
                           className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brandBlue flex items-center justify-center text-white hover:bg-blue-600 transition-colors duration-300"
                           title="View Live Site"
+                          aria-label="View Live Site"
                         >
                           <FaExternalLinkAlt className="text-base sm:text-lg" />
                         </a>
