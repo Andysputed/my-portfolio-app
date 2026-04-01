@@ -31,6 +31,7 @@ const About = () => {
               <img 
                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop" 
                 alt="About Me" 
+                fetchPriority='high'
                 className="w-full h-full object-cover opacity-90"
               />
             </div>
