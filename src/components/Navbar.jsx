@@ -22,7 +22,7 @@ const Navbar = () => {
 
         {/* Left: Logo */}
         <Link to="/" className="text-metallic font-display text-2xl md:text-3xl font-extrabold tracking-[0.2em] uppercase cursor-pointer">
-          Andrew
+          DRE LABS
         </Link>
 
         {/* Middle: Links & Dropdowns */}

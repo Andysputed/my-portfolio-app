@@ -21,7 +21,7 @@ const About = () => {
           {/* Vertical Text */}
           <div className="hidden md:block">
             <h2 className="text-white font-sans text-2xl tracking-widest font-bold whitespace-nowrap -rotate-90 origin-center translate-y-12">
-              About Andrew
+              About DRE LABS
             </h2>
           </div>
 

@@ -24,7 +24,7 @@ const Footer = () => {
         {/* Left: Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <span className="text-white font-display text-2xl font-bold tracking-[0.2em] uppercase">
-            Andrew
+            DRE LABS
           </span>
           {/* 🕵️‍♂️ 2. THE HIDDEN ADMIN LINK */}
           <Link 

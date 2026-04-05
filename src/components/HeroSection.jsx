@@ -96,7 +96,7 @@ const Hero = () => {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 1 }}
           className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 text-[clamp(4rem,11vw,11rem)] font-display font-extrabold text-metallic z-20 pointer-events-none uppercase tracking-normal text-center w-full leading-none"
         >
-          Andrew
+          DRE LABS
         </Motion.h1>
 
       </div>
