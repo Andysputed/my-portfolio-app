@@ -34,7 +34,7 @@ const Hero = () => {
           >
             <Motion.div variants={fadeUpVariant}>
               <h3 className="text-white text-lg font-bold tracking-widest uppercase mb-2">Expertise</h3>
-              <p className="text-textMuted">UI UX , Web Development & Web Design</p>
+              <p className="text-textMuted">UI UX Engineering, Web Development & Search Engine Optimization</p>
             </Motion.div>
             <Motion.div variants={fadeUpVariant}>
               <h3 className="text-white text-lg font-bold tracking-widest uppercase mb-2">Date of Birth</h3>
