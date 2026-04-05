@@ -55,12 +55,7 @@ const Hero = () => {
           >
             {/* The Capsule Shape Container */}
             <div className="w-full max-w-[320px] aspect-[1/1.5] rounded-[160px] bg-[#1a1c23] border-t border-textDark/30 overflow-hidden relative shadow-[0_0_40px_rgba(0,0,0,0.5)] z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop" 
-                alt="Portrait" 
-                fetchPriority='high'
-                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-              />
+              {/* Insert your own image here */}
             </div>
           </Motion.div>
 
