@@ -83,12 +83,12 @@ const Navbar = () => {
         </button>
 
         {/* Right: Email */}
-        <div className="hidden md:flex items-center gap-3 text-textMuted font-sans hover:text-white cursor-pointer transition-colors relative z-10">
+        <a href="mailto:andrewkirwa320@gmail.com" className="hidden md:flex items-center gap-3 text-textMuted font-sans hover:text-white cursor-pointer transition-colors relative z-10">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg>
           <span className="tracking-wider">andrewkirwa320@gmail.com</span>
-        </div>
+        </a>
 
       </div>
 
@@ -112,9 +112,9 @@ const Navbar = () => {
               <Link to="/pricing" onClick={closeMenu} className="hover:text-white transition-colors">Pricing</Link>
               <Link to="/contact-page" onClick={closeMenu} className="hover:text-white transition-colors">Contact</Link>
               <Link to="#news" onClick={closeMenu} className="hover:text-white transition-colors">News</Link>
-              <div className="pt-4 border-t border-textDark/30 text-xs tracking-wider text-textMuted">
+              <a href="mailto:andrewkirwa320@gmail.com" className="pt-4 border-t border-textDark/30 text-xs tracking-wider text-textMuted hover:text-white transition-colors block">
                 andrewkirwa320@gmail.com
-              </div>
+              </a>
             </div>
           </Motion.div>
         )}
