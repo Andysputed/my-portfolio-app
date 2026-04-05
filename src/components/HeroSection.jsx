@@ -88,7 +88,7 @@ const Hero = () => {
         <Motion.h1 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 1 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 text-[clamp(4rem,11vw,11rem)] font-display font-extrabold text-metallic z-20 pointer-events-none uppercase tracking-normal text-center w-full leading-none"
         >
           DRE LABS
