@@ -28,7 +28,7 @@ const About = () => {
           {/* Capsule Image (Matching the screenshot) */}
           <div className="w-full max-w-[350px] aspect-[4/5] rounded-[200px] border border-brandBlue/30 bg-[#1a1c23] p-2 relative shadow-[0_0_50px_rgba(0,96,255,0.1)]">
             <div className="w-full h-full rounded-[200px] overflow-hidden">
-              {/* Insert your own image here */}
+              <img src="/src/assets/andy.jpeg" alt="DRE LABS" className="w-full h-full object-cover object-top" />
             </div>
             {/* Top inner glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/4 bg-brandBlue/20 rounded-full blur-[40px] pointer-events-none"></div>
