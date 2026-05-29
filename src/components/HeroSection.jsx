@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
+import andyImg from '../assets/andy.jpeg';
 
 const Hero = () => {
   // Define subtle animation variants for reusability
@@ -55,7 +56,7 @@ const Hero = () => {
           >
             {/* The Capsule Shape Container */}
             <div className="w-full max-w-[320px] aspect-[1/1.5] rounded-[160px] bg-[#1a1c23] border-t border-textDark/30 overflow-hidden relative shadow-[0_0_40px_rgba(0,0,0,0.5)] z-10">
-              <img src="/src/assets/andy.jpeg" alt="Hero Portrait" className="w-full h-full object-cover object-top" />
+              <img src={andyImg} alt="Hero Portrait" className="w-full h-full object-cover object-top" />
             </div>
           </Motion.div>
 
