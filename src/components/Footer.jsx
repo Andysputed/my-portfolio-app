@@ -40,7 +40,7 @@ const Footer = () => {
           <a href="https://github.com/Andysputed" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-textDark/30 flex items-center justify-center text-textMuted hover:bg-brandBlue hover:text-white hover:border-brandBlue transition-all duration-300" aria-label="Visit my GitHub" title="GitHub">
             <FaGithub className="text-sm" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-textDark/30 flex items-center justify-center text-textMuted hover:bg-brandBlue hover:text-white hover:border-brandBlue transition-all duration-300" aria-label="Visit my LinkedIn" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/andrew-kirwa-8a687125a" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-textDark/30 flex items-center justify-center text-textMuted hover:bg-brandBlue hover:text-white hover:border-brandBlue transition-all duration-300" aria-label="Visit my LinkedIn" title="LinkedIn">
             <FaLinkedinIn className="text-sm" />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-textDark/30 flex items-center justify-center text-textMuted hover:bg-brandBlue hover:text-white hover:border-brandBlue transition-all duration-300" aria-label="Visit my Twitter" title="Twitter / X">
