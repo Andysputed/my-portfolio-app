@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const Contact = () => {
   const socials = [
     { icon: <FaGithub size={20} />, link: "https://github.com/Andysputed" },
-    { icon: <FaLinkedin size={20} />, link: "#" },
+    { icon: <FaLinkedin size={20} />, link: "https://www.linkedin.com/in/andrew-kirwa-8a687125a" },
     { icon: <FaTwitter size={20} />, link: "#" },
   ];
 
@@ -96,7 +96,7 @@ const Contact = () => {
               <button type="submit" className="relative overflow-hidden bg-white text-black font-display uppercase tracking-widest text-sm py-4 px-8 transition-all duration-300 w-fit hover:text-white group/btn">
                 <span className="relative z-10">Send Message</span>
                 {/* Button Fill Animation */}
-                <div className="absolute inset-0 bg-brandBlue translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+                <div className="absolute inset-0 bg-brandBlue translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
               </button>
             </form>
           </motion.div>

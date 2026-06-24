@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen pt-20 sm:pt-24 pb-10 sm:pb-12 flex items-center justify-center overflow-hidden bg-darkBg">
+    <section className="relative w-full min-h-screen pt-20 sm:pt-24 flex items-center justify-center overflow-hidden bg-darkBg">
       
       {/* Subtle Background Grid Lines */}
       <div className="absolute inset-0 pointer-events-none flex justify-center max-w-7xl mx-auto w-full">
@@ -20,7 +20,17 @@ const Hero = () => {
         <div className="w-1/4 h-full border-r border-textDark/10"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 mt-10 sm:mt-12">
+      {/* The Massive Overlay Text — anchored to section bottom, behind content */}
+      <Motion.h1 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[clamp(4rem,11vw,11rem)] font-display font-extrabold text-metallic z-0 pointer-events-none uppercase tracking-normal text-center w-full leading-none"
+      >
+        DRE LABS
+      </Motion.h1>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 mt-10 sm:mt-12 pb-[clamp(5rem,12vw,12rem)]">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
           
           {/* Left Column: Stats */}
@@ -31,7 +41,7 @@ const Hero = () => {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.2 } }
             }}
-            className="flex flex-col gap-16 text-center md:text-right font-sans relative z-30"
+            className="flex flex-col gap-10 text-center md:text-right font-sans relative z-30"
           >
             <Motion.div variants={fadeUpVariant}>
               <h3 className="text-white text-lg font-bold tracking-widest uppercase mb-2">Expertise</h3>
@@ -55,7 +65,7 @@ const Hero = () => {
             className="relative flex justify-center"
           >
             {/* The Capsule Shape Container */}
-            <div className="w-full max-w-[320px] aspect-[1/1.5] rounded-[160px] bg-[#1a1c23] border-t border-textDark/30 overflow-hidden relative shadow-[0_0_40px_rgba(0,0,0,0.5)] z-10">
+            <div className="w-full max-w-[320px] aspect-1/1.5 rounded-[160px] bg-[#1a1c23] border-t border-textDark/30 overflow-hidden relative shadow-[0_0_40px_rgba(0,0,0,0.5)] z-10">
               <img src={andyImg} alt="Hero Portrait" className="w-full h-full object-cover object-top" />
             </div>
           </Motion.div>
@@ -68,7 +78,7 @@ const Hero = () => {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.6 } }
             }}
-            className="flex flex-col gap-16 text-center md:text-left font-sans relative z-30"
+            className="flex flex-col gap-10 text-center md:text-left font-sans relative z-30"
           >
             <Motion.div variants={fadeUpVariant}>
               <h3 className="text-white text-lg font-bold tracking-widest uppercase mb-2">Born In</h3>
@@ -84,17 +94,6 @@ const Hero = () => {
             </Motion.div>
           </Motion.div>
         </div>
-
-        {/* The Massive Overlay Text */}
-        <Motion.h1 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 text-[clamp(4rem,11vw,11rem)] font-display font-extrabold text-metallic z-20 pointer-events-none uppercase tracking-normal text-center w-full leading-none"
-        >
-          DRE LABS
-        </Motion.h1>
-
       </div>
     </section>
   );
