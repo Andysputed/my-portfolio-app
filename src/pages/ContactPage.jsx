@@ -40,13 +40,13 @@ const Contact = () => {
             <div className="flex flex-col gap-10 font-sans mb-12">
               <div className="group cursor-pointer w-fit">
                 <h3 className="text-textDark text-xs font-bold tracking-widest uppercase mb-2 group-hover:text-brandBlue transition-colors">Email</h3>
-                <a href="mailto:andrewkirwa320@gmail.com" className="text-xl md:text-2xl text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-brandBlue after:transition-all after:duration-300 group-hover:after:w-full">
+                <a href="mailto:andrewkirwa320@gmail.com" className="text-xl md:text-2xl text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brandBlue after:transition-all after:duration-300 group-hover:after:w-full">
                   andrewkirwa320@gmail.com
                 </a>
               </div>
               <div className="group cursor-pointer w-fit">
                 <h3 className="text-textDark text-xs font-bold tracking-widest uppercase mb-2 group-hover:text-brandBlue transition-colors">Phone</h3>
-                <a href="tel:+254728704287" className="text-xl md:text-2xl text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-brandBlue after:transition-all after:duration-300 group-hover:after:w-full">
+                <a href="tel:+254728704287" className="text-xl md:text-2xl text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brandBlue after:transition-all after:duration-300 group-hover:after:w-full">
                   +254 728 704 287
                 </a>
               </div>
