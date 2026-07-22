@@ -1,12 +1,6 @@
 // api/keepalive.js
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase using your existing environment variables
-const supabase = createClient(
-  process.env.SUPABASE_URL, 
-  process.env.SUPABASE_ANON_KEY
-);
-
 export default async function handler(req, res) {
   // Security Check: Ensure only Vercel's Cron engine can trigger this route
   const authHeader = req.headers.authorization;
@@ -15,6 +9,16 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+      throw new Error("Missing Supabase Environment Variables in Vercel!");
+    }
+
+    // Initialize Supabase inside the handler so it doesn't crash on cold start if env vars are missing
+    const supabase = createClient(
+      process.env.SUPABASE_URL, 
+      process.env.SUPABASE_ANON_KEY
+    );
+
     // Run an incredibly tiny query on your projects table to wake up Postgres
     const { data, error } = await supabase
       .from('projects') 
