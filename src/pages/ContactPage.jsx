@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion  } from 'framer-motion';
 // Optional: If you want icons, you can import them from react-icons
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
@@ -9,6 +9,54 @@ const Contact = () => {
     { icon: <FaLinkedin size={20} />, link: "https://www.linkedin.com/in/andrew-kirwa-8a687125a" },
     { icon: <FaTwitter size={20} />, link: "#" },
   ];
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Handle Input Changes
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  // Handle Form Submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' }); // Reset form inputs
+      } else {
+        setStatus('error');
+        setErrorMessage(result.error || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setStatus('error');
+      setErrorMessage('Network error. Please check your connection.');
+    }
+  };
 
   return (
     <section className="relative w-full min-h-screen pt-24 sm:pt-32 pb-20 bg-darkBg text-white overflow-hidden z-20">
@@ -83,21 +131,34 @@ const Contact = () => {
             <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-brandBlue/50 transition-colors duration-500 group-hover:border-brandBlue"></div>
             <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-brandBlue/50 transition-colors duration-500 group-hover:border-brandBlue"></div>
 
-            <form className="flex flex-col gap-10 font-sans">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-10 font-sans">
               <div className="relative group/input">
-                <input type="text" placeholder="Your Name" className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark peer" required />
+                <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark peer" required />
               </div>
               <div className="relative group/input">
-                <input type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark peer" required />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark peer" required />
               </div>
               <div className="relative group/input">
-                <textarea rows="4" placeholder="Tell me about your project..." className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark resize-none peer" required></textarea>
+                <textarea rows="4" name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your project..." className="w-full bg-transparent border-b border-textDark/50 py-3 text-white focus:outline-none focus:border-brandBlue transition-colors placeholder:text-textDark resize-none peer" required></textarea>
               </div>
-              <button type="submit" className="relative overflow-hidden bg-white text-black font-display uppercase tracking-widest text-sm py-4 px-8 transition-all duration-300 w-fit hover:text-white group/btn">
-                <span className="relative z-10">Send Message</span>
+              <button type="submit" disabled={status === 'loading'} className="relative overflow-hidden bg-white text-black font-display uppercase tracking-widest text-sm py-4 px-8 transition-all duration-300 w-fit hover:text-white group/btn disabled:opacity-50 disabled:cursor-not-allowed">
+                <span className="relative z-10">{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
                 {/* Button Fill Animation */}
                 <div className="absolute inset-0 bg-brandBlue translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
               </button>
+              
+              {/* UI Feedback Alerts */}
+              {status === 'success' && (
+                <p className="p-3 bg-green-900/30 text-green-400 border border-green-500/50 rounded-lg text-sm font-medium">
+                  ✨ Message sent successfully! I'll get back to you soon.
+                </p>
+              )}
+
+              {status === 'error' && (
+                <p className="p-3 bg-red-900/30 text-red-400 border border-red-500/50 rounded-lg text-sm font-medium">
+                  ❌ {errorMessage}
+                </p>
+              )}
             </form>
           </motion.div>
 
